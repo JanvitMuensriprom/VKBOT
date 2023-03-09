@@ -367,4 +367,4 @@ def vk_account_repost(vk_account_id):
     # Redirect to the VK account page
     return redirect(url_for('vk_account', vk_account_id=vk_account_id))
 if __name__ == '__main__':
-    app.run('127.0.0.2',debug=True)
+    app.run('0.0.0.0')
