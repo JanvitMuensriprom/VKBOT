@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Repost History</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1>Repost History</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>User ID</th>
+                <th>Group Name</th>
+                <th>Post ID</th>
+                <th>Message</th>
+                <th>Image</th>
+                <th>Repost Date</th>
+                <th>Link</th>
+            </tr>
+            {% for repost in reposts %}
+                <tr>
+                    <td>{{ repost.id }}</td>
+                    <td>{{ repost.user_id }}</td>
+                    <td>{{ repost.group_name }}</td>
+                    <td>{{ repost.post_id }}</td>
+                    <td>{{ repost.message }}</td>
+                    <td><img src="{{ repost.image_url }}" alt="Post image"></td>
+                    <td>{{ repost.repost_date }}</td>
+                    <td><a href="https://vk.com/wall{{-repost.post_id}}">เปิดลิ้ง</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

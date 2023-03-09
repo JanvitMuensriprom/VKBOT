@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add VK Account</title>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<ul>
+				{% for message in messages %}
+					<li style="color: red;">{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	{% endwith %}
+	<form method="POST" action="{{ url_for('add_vk_account') }}">
+		<label>Username:</label>
+		<input type="text" name="username"><br>
+		<label>Password:</label>
+		<input type="password" name="password"><br>
+		<input type="submit" value="Add VK Account">
+	</form>
+</body>
+</html>

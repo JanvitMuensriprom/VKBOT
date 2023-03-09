@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Welcome, {{ user.username }}!</h1>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        
+        <div class="content">
+            <h2>Your VK accounts:</h2>
+            <ul class="vk-accounts">s
+                {% for vk_account in vk_accounts %}
+                  <li>
+                    {{ vk_account.username }}
+                    {% if vk_account.status == 'Active' %}
+                    <span class="status-label status-active">Online</span>
+                  {% elif vk_account.status == 'Ban' %}
+                    <span class="status-label status-ban">Ban</span>
+                  {% elif vk_account.status == 'Temporary Ban' %}
+                    <span class="status-label status-tempban">Temporary Ban</span>
+                  {% endif %} - <a href="{{ url_for('vk_account_repost_history', vk_account_id=vk_account.id) }}">Repost history</a>
+                    <form method="POST" action="{{ url_for('vk_account_repost', vk_account_id=vk_account.id) }}">
+                      <input type="hidden" name="vk_account_id" value="{{ vk_account.id }}">
+                      <label for="group_name">Group name:</label>
+                      <input type="text" name="group_name" required>
+                      <label for="message">Message:</label>
+                      <input type="text" name="message" required>
+                      <label for="repost">Repost:</label>
+                        <input type="checkbox" name="repost" value="1">
+                        <label for="comment">Comment:</label>
+                        <input type="checkbox" name="comment" value="1">
+                        <label for="like">Like:</label>
+                        <input type="checkbox" name="like" value="1">
+                        <label for="limit">Limit reposts per group:</label>
+                        <input type="number" name="limit" min="1" max="10" value="1">
+                      <input type="submit" value="Repost">
+                    </form>
+
+                  </li>
+                {% endfor %}
+                
+                </ul>
+            </ul>
+            <button><a href="{{ url_for('add_vk_account') }}" class="button-box">Add VK account</a></button>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VK บอท V0.1 By ฉันเองจ้า</title>
+  </head>
+  <body>
+    <h1>VK บอท V0.1 By ฉันเองจ้า</h1>
+  
+    <form method="post" action="{{ url_for('repost') }}">
+      <label for="user_id">User:</label>
+      <select id="user_id" name="user_id">
+          {% for user in users %}
+              <option value="{{ user.id }}">{{ user.login }}</option>
+          {% endfor %}
+      </select>
+      <br>
+      <label for="group_name">Group Name:</label>
+      <input type="text" id="group_name" name="group_name">
+      <br>
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message">
+      <br>
+      <button type="submit">Repost</button>
+    </form>
+    <a href="/users">View User Data</a> <a href="/register">Register VK</a>
+  </body>
+</html>

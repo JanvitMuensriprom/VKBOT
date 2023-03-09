@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Repost to VK Account</title>
+</head>
+<body>
+	{% if error %}
+		<p style="color: red;">{{ error }}</p>
+	{% endif %}
+	{% if success %}
+		<p style="color: green;">{{ success }}</p>
+	{% endif %}
+	<form method="POST" action="{{ url_for('vk_account_repost', vk_account_id=vk_account.id) }}">
+		<label>Group name:</label>
+		<input type="text" name="group_name"><br>
+		<label>Message:</label>
+		<input type="text" name="message"><br>
+		<input type="submit" value="Repost">
+	</form>
+</body>
+</html>

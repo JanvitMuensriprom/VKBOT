@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VK Account Repost History</title>
+</head>
+<body>
+	{% if error %}
+		<p style="color: red;">{{ error }}</p>
+	{% endif %}
+	<h1>Repost History for {{ vk_account.username }}</h1>
+	<ul>
+	{% for repost in reposts %}
+		<li>{{ repost.repost_date }} - {{ repost.group_name }} - {{ repost.post_id }}{% if repost.message %} - "{{ repost.message }}"{% endif %} {% if repost.image %}- <a href="{{ url_for('view_image', repost_id=repost.id) }}">View image</a>{% endif %}</li>
+	{% endfor %}
+	</ul>
+	<a href="{{ url_for('dashboard') }}">Back to dashboard</a>
+
+</body>
+</html>

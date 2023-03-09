@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VK Bot Registration</title>
+  </head>
+  <body>
+    <h1>VK Bot Registration</h1>
+  
+    <form method="post" action="{{ url_for('register') }}">
+      <label for="login">Login:</label>
+      <input type="text" id="login" name="login">
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <br>
+      <button type="submit">Register</button>
+  </form>
+    <a href="/">Back to Home</a>
+  </body>
+</html>

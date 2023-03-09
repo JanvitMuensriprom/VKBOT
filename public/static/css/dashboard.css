@@ -1,0 +1,131 @@
+body {
+  background-color: #1c2331;
+  background-image: linear-gradient(to bottom right, #1c2331, #2d3447);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #61affe;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #49a2ff;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #2d3447;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table td {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.table tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+ul.vk-accounts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.vk-accounts li {
+  background-color: #2d3447;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+ul.vk-accounts li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+ul.vk-accounts li form {
+  margin-top: 10px;
+}
+
+.button-box {
+  display: inline-block;
+  padding: 10px;
+  
+  border-radius: 5px;
+  background-color: #ddd;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #309704;
+}
+
+.button-box a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-box:hover {
+  background-color: #61affe;
+}
+
+.button-box:hover a {
+  color: #000;
+}
